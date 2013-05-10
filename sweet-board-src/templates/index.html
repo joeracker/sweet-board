@@ -1,0 +1,47 @@
+<!doctype html>
+<head>
+<title>Rackspace Sweet Board</title>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+	padding: 20px;
+}
+</style>
+
+</head>
+<body>
+  <h1>Rackspace Sweet Board</h1>
+{% if messages %}
+  <p>There are messages</p>
+  <table class="table table-bordered table-striped table-condensed">
+	  <thead>
+	  <tr>
+		  <th>SID</th>
+		  <th>Body</th>
+		  <th>Date Sent</th>
+		  <th>From</th>
+		  <th>To</th>
+		  <th>URI</th>
+	  </tr>
+	  </thead>
+	  <tbody>
+	  {% for message in messages %}
+	  	{% if message.direction == 'inbound' %}
+	  	<tr>
+			<td>{{ message.sid}}</td>
+			<td>{{ message.body }}</td>
+			<td>{{message.date_sent}}</td>
+			<td>{{message.from}}</td>
+			<td>{{message.to}}</td>
+			<td>{{message.uri}}</td>
+	  	</tr>
+		{% endif %}
+	  {% endfor %}
+	  </tbody>
+  </table>
+{% else %}
+  <h1>There are no messages.</h1>
+{% endif %}
+</body>
+</html>
