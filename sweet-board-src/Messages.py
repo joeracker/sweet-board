@@ -1,5 +1,7 @@
 #from sweetboard import app 
 from twilio.rest import TwilioRestClient
+#from datetime import datetime
+from datetime import datetime, timedelta, date
 
 # To find these visit https://www.twilio.com/user/account
 
@@ -14,5 +16,7 @@ class Messages():
         #for message in client.sms.messages.list():
         #    print message.body
         messages = client.sms.messages.list(direction="inbound")
+        for message in messages:
+            message.date_sent = datetime.isoformat(message.date_sent)
         return messages
         
