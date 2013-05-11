@@ -4,4 +4,4 @@
 pip install Flask
 pip install twilio
 export SWEETBOARD_SETTINGS=/sweet-board-src/secrets.py
-python /sweet-board-src/index.py
+python /sweet-board-src/sweetboard.py
