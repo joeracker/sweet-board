@@ -75,6 +75,7 @@ Vagrant::Config.run do |config|
   #  chef.add_recipe "git"
     chef.add_recipe "vim"
     chef.add_recipe "python"
+    chef.add_recipe "gunicorn"
   #   # You may also specify custom JSON attributes:
   #   chef.json = { :mysql_password => "foo" }
   end
