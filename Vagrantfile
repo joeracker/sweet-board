@@ -30,6 +30,7 @@ Vagrant::Config.run do |config|
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
+  config.vm.forward_port 8000, 8008
   config.vm.forward_port 80, 8080
   config.vm.forward_port 5000, 5050
 
@@ -69,13 +70,17 @@ Vagrant::Config.run do |config|
      chef.cookbooks_path = "cookbooks"
   #   chef.roles_path = "../my-recipes/roles"
   #   chef.data_bags_path = "../my-recipes/data_bags"
-    chef.add_recipe "apt"
+     chef.add_recipe "apt"
   #  chef.add_recipe "apache2::mod_wsgi"
-    chef.add_recipe "build-essential"
+     chef.add_recipe "build-essential"
   #  chef.add_recipe "git"
-    chef.add_recipe "vim"
-    chef.add_recipe "python"
-    chef.add_recipe "gunicorn"
+     chef.add_recipe "vim"
+     chef.add_recipe "python"
+     chef.add_recipe "gunicorn"
+     chef.add_recipe "ohai"
+     chef.add_recipe "nginx"
+    
+    
   #   # You may also specify custom JSON attributes:
   #   chef.json = { :mysql_password => "foo" }
   end
