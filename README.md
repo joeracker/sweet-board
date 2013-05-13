@@ -23,5 +23,15 @@ Visit http://downloads.vagrantup.com/ and follow instructions
 ### Start Vagrant
     vagrant up
 
+### Start the app
+    vagrant ssh
+	cd /sweet-board-src/
+	gunicorn -w 4 -b 0.0.0.0:5000 sweetboard:app
+
+Gunicorn can be run as a daemon with the --daemon switch:
+
+    gunicorn -w 4 -b 0.0.0.0:5000 sweetboard:app --daemon
+
+
 ### Begin coding
 You should now have a running app, available at http://localhost:5050/. The code for the app is in "sweet-board-src".

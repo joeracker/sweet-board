@@ -17,6 +17,7 @@ class Messages():
         #    print message.body
         messages = client.sms.messages.list(direction="inbound")
         for message in messages:
-            message.date_sent = datetime.isoformat(message.date_sent)
+            #message.date_sent = datetime.isoformat(message.date_sent)
+            pass
         return messages
         
