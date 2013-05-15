@@ -4,7 +4,7 @@ var animating = false;
 
 function getSlider(){
 	$.ajax({
-		url: "get/vintage.php"
+		url: "/archive"
 	}).done(function(data){
 		$('.slider').html(data);
 		$('.slider li').width($('body').innerWidth());
@@ -45,7 +45,7 @@ function updateSlider(){
 
 function getMessage(isLast, message_id){
 	$.ajax({
-		url: "get/message.php?id=" + message_id
+		url: "/message/" + message_id
 	}).done(function(data){
 		$('.wrapper').prepend(data);
 		$('article.new').emoji(64);
@@ -65,7 +65,7 @@ function getMessage(isLast, message_id){
 }
 function update(){
 	$.ajax({
-		url: "get/update.php"
+		url: "/message_sid_list"
 	}).done(function(data){
 		var new_ids = data.split(',');
 		var index = 0;
@@ -76,7 +76,7 @@ function update(){
 				new_ids.splice(index, 1);
 			}
 		}
-		
+
 		if (new_ids.length === 0){
 			update();
 		} else {

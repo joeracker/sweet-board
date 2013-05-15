@@ -12,12 +12,10 @@ class Messages():
     
     def list(self, account_sid, auth_token):
         client = TwilioRestClient(account_sid, auth_token)
-
-        #for message in client.sms.messages.list():
-        #    print message.body
         messages = client.sms.messages.list(direction="inbound")
-        for message in messages:
-            #message.date_sent = datetime.isoformat(message.date_sent)
-            pass
         return messages
-        
+    
+    def getMessage(self, account_sid, auth_token, message_sid):
+        client = TwilioRestClient(account_sid, auth_token)
+        message = client.sms.messages.get(message_sid)
+        return message

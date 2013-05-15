@@ -1,0 +1,11 @@
+{% if messages %}
+	{% for message in messages %}
+	  	{% if message.direction == 'inbound' %}
+			<li><blockquote><em>&#8220;</em>{{message.body}}<em>&#8221;</em></blockquote></li>
+		{% endif %}
+	{% endfor %}
+{% else %}
+			<li><blockquote><em>&#8220;</em>There are no old messages.<em>&#8221;</em></blockquote></li>
+{% endif %}
+
+
