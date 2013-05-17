@@ -51,6 +51,7 @@ function getMessage(isLast, message_id){
 		$('article.new').emoji(64);
 		$('article.new').find("abbr.timeago").timeago();
 		message_ids.push(message_id);
+		playSound("/static/sounds/smb_coin.mp3");
 		$('article:not(.hidden)').last().addClass('hidden');
 		setTimeout(function(){
 			$('article.new').removeClass('new');
@@ -107,6 +108,23 @@ function showVintage(){
 		animating = false;
 		$('.vintage').removeClass('hiding');
 	});
+}
+
+function playSound(sound_file) {
+	var aud_con = $(document.createElement("audio"));
+	aud_con.attr("autoplay", "true");
+	aud_con.prop("id", "audio_control");
+
+	var aud_src = $(document.createElement("source"));
+	aud_src.attr("src", sound_file);
+	aud_src.attr("type", "audio/mpeg");
+
+	aud_con.appendChild(aud_src);
+	$(document).appendChild(aud_con)
+
+	aud_con.onEnded = function() {
+		aud_con.remove();
+	}
 }
 
 jQuery(document).ready(function() {
