@@ -119,8 +119,8 @@ function playSound(sound_file) {
 	aud_src.attr("src", sound_file);
 	aud_src.attr("type", "audio/mpeg");
 
-	aud_con.appendChild(aud_src);
-	$(document).appendChild(aud_con)
+	aud_con.append(aud_src);
+	$(document).append(aud_con)
 
 	aud_con.onEnded = function() {
 		aud_con.remove();
