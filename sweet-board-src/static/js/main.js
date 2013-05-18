@@ -111,16 +111,16 @@ function showVintage(){
 }
 
 function playSound(sound_file) {
-	var aud_con = $(document.createElement("audio"));
+	var aud_con = jQuery(document.createElement("audio"));
 	aud_con.attr("autoplay", "true");
 	aud_con.prop("id", "audio_control");
 
-	var aud_src = $(document.createElement("source"));
+	var aud_src = jQuery(document.createElement("source"));
 	aud_src.attr("src", sound_file);
 	aud_src.attr("type", "audio/mpeg");
 
 	aud_con.append(aud_src);
-	$(document).append(aud_con)
+	jQuery(document).append(aud_con)
 
 	aud_con.onEnded = function() {
 		aud_con.remove();
