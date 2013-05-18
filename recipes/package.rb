@@ -1,7 +1,7 @@
 #
-# Author:: Seth Chisamore (<schisamo@opscode.com>)
-# Cookbook Name:: gunicorn
-# Attribute:: default
+# Author:: Seth Chisamore <schisamo@opscode.com>
+# Cookbook Name:: python
+# Recipe:: package
 #
 # Copyright 2011, Opscode, Inc.
 #
@@ -18,4 +18,22 @@
 # limitations under the License.
 #
 
-default["gunicorn"]["virtualenv"] = nil
+python_pkgs = value_for_platform(
+  ["debian","ubuntu"] => {
+    "default" => ["python","python-dev"]
+  },
+  ["centos","redhat","fedora"] => {
+    "default" => ["python26","python26-devel"]
+  },
+  ["freebsd"] => {
+    "default" => ["python"]
+  },
+  "default" => ["python","python-dev"]
+)
+
+python_pkgs.each do |pkg|
+  package pkg do
+    action :install
+  end
+end
+

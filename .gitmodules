@@ -1,0 +1,24 @@
+[submodule "apt"]
+	path = apt
+	url = https://github.com/cookbooks/apt.git
+[submodule "cookbooks/apt"]
+	path = cookbooks/apt
+	url = https://github.com/cookbooks/apt.git
+[submodule "cookbooks/python"]
+	path = cookbooks/python
+	url = https://github.com/cookbooks/python.git
+[submodule "cookbooks/build-essential"]
+	path = cookbooks/build-essential
+	url = https://github.com/cookbooks/build-essential.git
+[submodule "cookbooks/gunicorn"]
+	path = cookbooks/gunicorn
+	url = https://github.com/cookbooks/gunicorn.git
+[submodule "cookbooks/nginx"]
+	path = cookbooks/nginx
+	url = https://github.com/cookbooks/nginx.git
+[submodule "cookbooks/ohai"]
+	path = cookbooks/ohai
+	url = https://github.com/cookbooks/ohai.git
+[submodule "cookbooks/vim"]
+	path = cookbooks/vim
+	url = https://github.com/cookbooks/vim.git
