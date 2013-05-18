@@ -12,7 +12,12 @@ Visit http://downloads.vagrantup.com/ and follow instructions
 
 
 ### Get the code
+    # Clone the code
     git clone https://github.com/joeracker/sweet-board.git
+    # setup dependant submodules
+    git submodule init
+    git submodule update
+
 
 ### Set your secrets
     cd sweet-board/sweet-board-src

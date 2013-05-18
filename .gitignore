@@ -38,5 +38,8 @@ nosetests.xml
 # VirtualBox vm
 *.box
 
+# Vagrant
+.vagrant
+
 # secret config files
 secrets.py
