@@ -15,6 +15,7 @@ Visit http://downloads.vagrantup.com/ and follow instructions
     # Clone the code
     git clone https://github.com/joeracker/sweet-board.git
     # setup dependant submodules
+    cd sweet-board
     git submodule init
     git submodule update
 
