@@ -27,12 +27,16 @@ Visit http://downloads.vagrantup.com/ and follow instructions
 	vim secrets.py 
 
 ### Start Vagrant
+    # Complete this from the base directory of the repo
     vagrant up
 
 ### Start the app
     vagrant ssh
 	cd /sweet-board-src/
 	gunicorn -w 4 -b 0.0.0.0:5000 sweetboard:app
+        
+        # You can also use the Python web server
+        # python sweetboard.py
 
 Gunicorn can be run as a daemon with the --daemon switch:
 
