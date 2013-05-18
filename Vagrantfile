@@ -72,11 +72,11 @@ Vagrant::Config.run do |config|
      chef.add_recipe "apt"
   #  chef.add_recipe "apache2::mod_wsgi"
      chef.add_recipe "build-essential"
-  #  chef.add_recipe "git"
+  #   chef.add_recipe "git"
+     chef.add_recipe "ohai"
      chef.add_recipe "vim"
      chef.add_recipe "python"
      chef.add_recipe "gunicorn"
-     chef.add_recipe "ohai"
      chef.add_recipe "nginx"
     
     

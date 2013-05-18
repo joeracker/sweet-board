@@ -12,7 +12,13 @@ Visit http://downloads.vagrantup.com/ and follow instructions
 
 
 ### Get the code
+    # Clone the code
     git clone https://github.com/joeracker/sweet-board.git
+    # setup dependant submodules
+    cd sweet-board
+    git submodule init
+    git submodule update
+
 
 ### Set your secrets
     cd sweet-board/sweet-board-src
@@ -21,12 +27,16 @@ Visit http://downloads.vagrantup.com/ and follow instructions
 	vim secrets.py 
 
 ### Start Vagrant
+    # Complete this from the base directory of the repo
     vagrant up
 
 ### Start the app
     vagrant ssh
 	cd /sweet-board-src/
 	gunicorn -w 4 -b 0.0.0.0:5000 sweetboard:app
+        
+        # You can also use the Python web server
+        # python sweetboard.py
 
 Gunicorn can be run as a daemon with the --daemon switch:
 
