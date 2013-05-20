@@ -1,6 +1,7 @@
 
 from flask import Flask, render_template
 from flask import render_template
+from flask import request
 from Messages import Messages
 
 app = Flask(__name__)
@@ -36,7 +37,13 @@ def get_message_sid_list():
 def get_archive():
    messages = Messages()
    return render_template('archive.html', messages=messages.list(app.config['TWILIO_ACCOUNT_SID'], app.config['TWILIO_AUTH_TOKEN']))    
-    
+
+@app.route("/new_sweet", methods=["GET", "POST"])
+def new_sweetness():
+    if request.method == "POST":
+        pass
+    else:
+        return render_template("add.html");
 
 @app.route('/debug')
 def debug():
