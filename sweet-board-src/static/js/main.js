@@ -120,11 +120,6 @@ function playSound(sound_file) {
 	aud_src.attr("type", "audio/mpeg");
 
 	aud_con.append(aud_src);
-	jQuery(document).append(aud_con)
-
-	aud_con.onEnded = function() {
-		aud_con.remove();
-	}
 }
 
 jQuery(document).ready(function() {
