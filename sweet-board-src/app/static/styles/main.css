@@ -44,9 +44,9 @@ body {
 h1 {
   font-family: "Benton", 'helvetica neue', helvetica;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.0em;
   letter-spacing: 0.05em;
-  line-height: 200%;
+  line-height: 150%;
   padding: 0;
   margin: 0;
   background: #922D8D;

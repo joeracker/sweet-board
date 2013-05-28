@@ -13,6 +13,7 @@ body {
 	background-color: #00bff3;
     background-repeat: no-repeat;
     background-size: 100% auto;
+    background-position-y: -90px;
 }
 
 .wrapper {
