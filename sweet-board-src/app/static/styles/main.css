@@ -168,9 +168,6 @@ section.vintage ul.sweetTicker {
   margin: 0;
   padding: 0;
   width: 100%;
-  display: inline-block;
-  overflow: hidden;
-  width: 100%;
 }
 section.vintage ul.sweetTicker:before,
 section.vintage ul.sweetTicker:after {
@@ -182,12 +179,14 @@ section.vintage ul.sweetTicker:after {
   clear: both;
 }
 section.vintage ul.sweetTicker li {
-  position: relative;
+  position: absolute;
   margin: 0;
   padding: 0px;
+  display: block;
+  width: 100%;
 }
 section.vintage ul.sweetTicker blockquote {
-  position: relative;
+  width: 100%;
   text-transform: none;
   font-family: 'Benton', 'helvetica neue', helvetica;
   font-weight: 300;
@@ -265,20 +264,20 @@ footer span a {
 }
 
 .sweet-show {
-  left: -2500px;
+  left: 100%;
   opacity:0;
 }
 .sweet-show-active.sweet-show-active {
-  left: -2500px;
+  left: 0;
   opacity:1;
 }
 
 .sweet-hide {
   opacity: 1;
-  left: -2500px;
+  left: 0;
 }
 
 .sweet-hide-active.sweet-hide-active {
-  left: -2500px;
+  left: -100%;
   opacity: 0;
 }
