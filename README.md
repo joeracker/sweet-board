@@ -21,7 +21,7 @@ Visit http://downloads.vagrantup.com/ and follow instructions
 
 
 ### Set your secrets
-    cd sweet-board/sweet-board-src
+    cd sweet-board/app
 	mv secrets_example.py secrets.py
     # Add your authtoken and sid
 	vim secrets.py 
@@ -44,4 +44,4 @@ Gunicorn can be run as a daemon with the --daemon switch:
 
 
 ### Begin coding
-You should now have a running app, available at http://localhost:5050/. The code for the app is in "sweet-board-src".
+You should now have a running app, available at http://localhost:5050/. The code for the app is in "app".

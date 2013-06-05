@@ -1,0 +1,15 @@
+<div class='vintage'>
+    <section class="vintage">
+        <h3><em>Vintage</em> sweetness</h3>
+        <ul class="sweetTicker">
+            <li ng-repeat="message in MessageData.messages" class='item' ng-show="TickerList.messageIndex == $index" ng-animate="{show: 'sweet-show', hide: 'sweet-hide'}">
+                <blockquote>
+                    <em>“</em>{{ message.body }}<em>“</em>
+                </blockquote>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <div>To add to the sweetness, text <span>(210) 714-1408</span></div>
+    </footer>
+</div>
