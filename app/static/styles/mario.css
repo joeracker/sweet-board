@@ -1,0 +1,48 @@
+/**
+Notes:
+ - Mario themed background image with luigi jumping on the right:
+ http://images.wikia.com/fantendo/images/4/4d/Luigi_Jump.jpg
+ - coins for each text - maybe we can tally them?
+ http://png-3.findicons.com/files/icons/2297/super_mario/256/retro_coin.png
+ - At the bottom, have mario kart drive the archived messages out
+ http://images1.fanpop.com/images/image_uploads/Mario-in-Mario-Kart-Wii-mario-kart-852106_533_600.jpg
+ 
+**/
+body {
+	background-image: url('/static/img/mushroom_background.png') !important;
+	background-color: #00bff3;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position-y: -90px;
+}
+
+.wrapper {
+	background-color: transparent;
+}
+div.article {
+	border: 0px !important;
+	background: rgba(255,255,255,.5) !important;
+/*	background-color:#000;
+	
+	background: rgba(246, 246, 246 .5) !important;
+	*/
+}
+h1, h3 {
+	text-transform: none !important;
+	background-color:#fe0000 !important;
+}
+.wrapper blockquote {
+    border: 0px;
+	background-image: url('/static/img/coin.png');
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	padding-left: 60px !important;
+}
+
+.vintage blockquote {
+    border: 0px;
+	background-image: url('/static/img/missile_bill.png');
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	padding-left: 80px !important;
+}
