@@ -29,4 +29,16 @@ angular.module('SweetBoardDirectives', []).
                 runIncrement();
             }
         };
+    }).
+    directive('sprite', function () {
+        'use strict';
+        return {
+            restrict: 'E',
+            replace: true,
+            scope: false,
+            templateUrl: 'static/directives/sprite.html',
+            link: function (scope, element, attrs) {
+                scope.classList = attrs["spriteDescription"];
+            }
+        };
     });

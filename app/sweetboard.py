@@ -54,7 +54,11 @@ def new_sweetness():
     if request.method == "POST":
         pass
     else:
-        return render_template("add.html");
+        return render_template("add.html")
+
+@app.route("/sprite_demo/<character>/<direction>/<action>/")
+def sprite_demo(character, direction, action):
+    return render_template('sprite.html', character=character, direction=direction, action=action)
 
 @app.route('/debug')
 def debug():
