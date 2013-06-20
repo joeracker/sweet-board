@@ -66,6 +66,61 @@ h1, h3 {
     background-repeat: no-repeat;
 }
 
+.sprite.vintage-topper {
+    position: fixed;
+    bottom: 191px;
+    z-index: 10000;
+    right: 130px;
+}
+
+@keyframes "spin" {
+ 0% {
+    -webkit-transform: rotateY(0deg);
+   	-moz-transform: rotateY(0deg);
+   	-o-transform: rotateY(0deg);
+   	-ms-transform: rotateY(0deg);
+   	transform: rotateY(0deg);
+ }
+ 100% {
+    -webkit-transform: rotateY(360deg);
+   	-moz-transform: rotateY(360deg);
+   	-o-transform: rotateY(360deg);
+   	-ms-transform: rotateY(360deg);
+   	transform: rotateY(360deg);
+ }
+
+}
+
+@-moz-keyframes spin {
+ 0% {
+   -moz-transform: rotateY(0deg);
+   transform: rotateY(0deg);
+ }
+ 100% {
+   -moz-transform: rotateY(360deg);
+   transform: rotateY(360deg);
+ }
+
+}
+
+@-webkit-keyframes "spin" {
+ 0% {
+   -webkit-transform: rotateY(0deg);
+   transform: rotateY(0deg);
+ }
+ 100% {
+   -webkit-transform: rotateY(360deg);
+   transform: rotateY(360deg);
+ }
+
+}
+
+.sprite.coin-spin {
+    -webkit-animation: spin 1s infinite linear;
+    -moz-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+}
+
 .mario {
     background-image: url(../img/mario_sprites.png);
     background-position-y: -220px;
