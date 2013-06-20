@@ -60,7 +60,7 @@ h1, h3 {
 */
 
 .sprite {
-    display: block;
+    display: inline-block;
     width: 100px;
     height: 100px;
     background-repeat: no-repeat;
@@ -170,7 +170,34 @@ h1, h3 {
     background-position-x: 0px;
 }
 
-    
+.mario.examine {
+    background-position-y: -580px;
+}
+
+.mario.examine.left.up {
+    background-position-x: -360px;
+}
+
+.mario.examine.left.tilt {
+    background-position-x: -240px;
+}
+
+.mario.examine.left.turn {
+    background-position-x: -120px;
+}
+
+.mario.examine.right.up {
+    background-position-x: -720px;
+}
+
+.mario.examine.right.tilt {
+    background-position-x: -840px;
+}
+
+.mario.examine.right.turn {
+    background-position-x: -960px;
+}
+
 @keyframes "mario-left-walking" {
   from {
    background-position-x: -480px;
@@ -306,13 +333,89 @@ h1, h3 {
 }
 
 .mario.left.sprinting {
-    -webkit-animation: mario-left-sprinting .2s steps(3, end) infinite;
-    -moz-animation: mario-left-sprinting .2s steps(3, end) infinite;
-    animation: mario-left-sprinting .2s steps(3, end) infinite;
+    -webkit-animation: mario-left-sprinting .2s steps(3, end) infinite alternate;
+    -moz-animation: mario-left-sprinting .2s steps(3, end) infinite alternate;
+    animation: mario-left-sprinting .2s steps(3, end) infinite alternate;
 }
 
 .mario.right.sprinting {
-    -webkit-animation: mario-right-sprinting .2s steps(3, end) infinite;
-    -moz-animation: mario-right-sprinting .2s steps(3, end) infinite;
-    animation: mario-right-sprinting .2s steps(3, end) infinite;
+    -webkit-animation: mario-right-sprinting .2s steps(3, end) infinite alternate;
+    -moz-animation: mario-right-sprinting .2s steps(3, end) infinite alternate;
+    animation: mario-right-sprinting .2s steps(3, end) infinite alternate;
+}
+
+
+@keyframes "mario-left-examining" {
+ from {
+    background-position-x: -360px;
+ }
+ to {
+    background-position-x: 0px;
+ }
+
+}
+
+@-moz-keyframes mario-left-examining {
+ from {
+   background-position-x: -360px;
+ }
+ to {
+   background-position-x: 0px;
+ }
+
+}
+
+@-webkit-keyframes "mario-left-examining" {
+ from {
+   background-position-x: -360px;
+ }
+ to {
+   background-position-x: 0px;
+ }
+
+}
+@keyframes "mario-right-examining" {
+ from {
+    background-position-x: -720px;
+ }
+ to {
+    background-position-x: -1080px;
+ }
+
+}
+
+@-moz-keyframes mario-right-examining {
+ from {
+   background-position-x: -720px;
+ }
+ to {
+   background-position-x: -1080px;
+ }
+
+}
+
+@-webkit-keyframes "mario-right-examining" {
+ from {
+   background-position-x: -720px;
+ }
+ to {
+   background-position-x: -1080px;
+ }
+
+}
+
+.mario.examining {
+    background-position-y: -580px;
+}
+
+.mario.left.examining {
+	-webkit-animation: mario-left-examining 2s steps(3, end) infinite alternate;
+	-moz-animation: mario-left-examining 2s steps(3, end) infinite alternate;
+	animation: mario-left-examining 2s steps(3, end) infinite alternate;
+}
+
+.mario.right.examining {
+	-webkit-animation: mario-right-examining 2s steps(3, end) infinite alternate;
+	-moz-animation: mario-right-examining 2s steps(3, end) infinite alternate;
+	animation: mario-right-examining 2s steps(3, end) infinite alternate;
 }
