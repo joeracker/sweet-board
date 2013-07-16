@@ -66,6 +66,44 @@ angular.module('SweetBoardServices', ['ngResource']).
             }
         };
     }).
+    factory("MarioticonData", function () {
+        return {
+            iconMapping: {
+                "rage": {
+                    type: "img",
+                    src: "/static/img/hades_rage.gif"
+                }
+            },
+            textEnclosures: ["[","]"],
+            constructString: function (key) {
+                return (_.contains(_.keys(this.iconMapping), key)) ? this.textEnclosures[0] + key + this.textEnclosures[1] : "";
+            },
+            constructRegEx: function (key) {
+                return this.constructString(key).replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+            },
+            parseText: function (msg_data) {
+                msg_data = msg_data.replace(/(<([^>]+)>)/ig,"");
+                for (var k in this.iconMapping) {
+                    if (msg_data.toLowerCase().indexOf(this.constructString(k)) >= 0) {
+                        var obj;
+                        
+                        if (this.iconMapping[k].type == "img") {
+                            obj = document.createElement("img");
+                            obj.setAttribute("src", this.iconMapping[k].src);
+                        } else if (this.iconMapping[k].type == "div") {
+                            obj = document.createElement("div");
+                            obj.classList.add(this.iconMapping[k].src);
+                        }
+
+                        msg_data = msg_data.toLowerCase().replace(new RegExp(this.constructRegEx(k), "g"), obj.outerHTML)
+                        console.log(msg_data)
+                    }
+                }
+                
+                return msg_data;
+            }
+        };
+    }).
     factory('Sounds', function () {
         return {
             playSound: function (sound_file) {

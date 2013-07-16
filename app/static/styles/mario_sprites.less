@@ -1,0 +1,550 @@
+@mario_adult_height: 130px;
+@mario_adult_width: 104px;
+@mario_adult_h_spacing: 104px;
+
+/* Sprites!! */
+
+.sprite () {
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.horizontal-flip () {
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.mario () {
+    .sprite;
+    height: @mario_adult_height;
+    width: @mario_adult_width;
+    background-image: url(../img/mario_adult_sprites.png);
+}
+
+.mario-position-x (@x: 0) {
+    background-position-x: -@x * @mario_adult_h_spacing;
+}
+
+.mario-position-y (@y: 0) {
+    background-position-y: -@y * @mario_adult_height;
+}
+
+.mario-position (@x: 0; @y: 0) {
+    .mario;
+    .mario-position-x(@x);
+    .mario-position-y(@y);
+}
+
+.mario-stand-left {
+    .mario-position(0, 0);
+}
+
+.mario-stand-right {
+    .mario-stand-left;
+    .horizontal-flip;
+}
+
+.mario-walk-short-left {
+    .mario-position(1, 0);
+}
+
+.mario-walk-short-right {
+    .mario-walk-short-left;
+    .horizontal-flip;
+}
+
+.mario-walk-long-left {
+    .mario-position(2, 0);
+}
+
+.mario-walk-long-right {
+    .mario-walk-long-left;
+    .horizontal-flip;
+}
+
+@keyframes "mario-walking-left" {
+  from {
+   .mario-position(3, 0);
+ }
+ to {
+   .mario-position(3,0);
+ }
+}
+
+@-moz-keyframes mario-walking-left {
+  from {
+   .mario-position(3, 0);
+ }
+ to {
+   .mario-position(3,0);
+ }
+}
+
+@-webkit-keyframes "mario-walking-left" {
+  from {
+   .mario-position(0, 0);
+ }
+ to {
+   .mario-position(3,0);
+ }
+}
+
+@-ms-keyframes "mario-walking-left" {
+  from {
+   .mario-position(0, 0);
+ }
+ to {
+   .mario-position(3,0);
+ }
+}
+
+@-o-keyframes "mario-walking-left" {
+  from {
+   .mario-position(0, 0);
+ }
+ to {
+   .mario-position(3,0);
+ }
+}
+
+.mario-walking-left {
+    .sprite;
+    -webkit-animation: mario-walking-left .2s steps(3, end) infinite alternate;
+    -moz-animation: mario-walking-left .2s steps(3, end) infinite alternate;
+    -ms-animation: mario-walking-left .2s steps(3, end) infinite alternate;
+    -o-animation: mario-walking-left .2s steps(3, end) infinite alternate;
+    animation: mario-walking-left .2s steps(3, end) infinite alternate;
+}
+
+.mario-walking-right {
+    .mario-walking-left;
+    .horizontal-flip;
+}
+
+.mario-sprint-short-left {
+    .mario-position(0, 1);
+}
+
+.mario-sprint-med-left {
+    .mario-position(1, 1);
+}
+
+.mario-sprint-long-left {
+    .mario-position(2, 1);
+}
+
+
+@keyframes "mario-sprinting-left" {
+from {
+   .mario-position(0, 1);
+ }
+ to {
+   .mario-position(3,1);
+ }
+
+}
+
+@-moz-keyframes mario-sprinting-left {
+from {
+   .mario-position(0, 1);
+ }
+ to {
+   .mario-position(3,1);
+ }
+}
+
+@-webkit-keyframes "mario-sprinting-left" {
+from {
+   .mario-position(0, 1);
+ }
+ to {
+   .mario-position(3,1);
+ }
+}
+
+@-ms-keyframes "mario-sprinting-left" {
+from {
+   .mario-position(0, 1);
+ }
+ to {
+   .mario-position(3,1);
+ }
+}
+
+@-o-keyframes "mario-sprinting-left" {
+from {
+   .mario-position(0, 1);
+ }
+ to {
+   .mario-position(3,1);
+ }
+}
+
+
+.mario-sprinting-left {
+    .sprite;
+    -webkit-animation: mario-sprinting-left .05s steps(3, end) infinite alternate;
+    -moz-animation: mario-sprinting-left .05s steps(3, end) infinite alternate;
+    -ms-animation: mario-sprinting-left .05s steps(3, end) infinite alternate;
+    -o-animation: mario-sprinting-left .05s steps(3, end) infinite alternate;
+    animation: mario-sprinting-left .05s steps(3, end) infinite alternate;
+}
+
+.mario-sprinting-right {
+    .mario-sprinting-left;
+    .horizontal-flip;
+}
+
+.mario-jump-left {
+    .mario-position(3,0);
+}
+
+.mario-jump-right {
+    .mario-jump-left;
+    .horizontal-flip;
+}
+
+.mario-duck-left {
+    .mario-position(4,0);
+}
+
+.mario-duck-right {
+    .mario-duck-left;
+    .horizontal-flip;
+}
+
+.mario-skid-left {
+    .mario-position(5,0);
+}
+
+.mario-skid-right {
+    .mario-skid-left;
+    .horizontal-flip;
+}
+
+.mario-kick-left {
+    .mario-position(6,0);
+}
+
+.mario-kick-right {
+    .mario-kick-left;
+    .horizontal-flip;
+}
+
+.mario-sit-left {
+    .mario-position(7, 0);
+}
+
+.mario-sit-right {
+    .mario-sit-left;
+    .horizontal-flip;
+}
+
+.mario-shell-stand-left {
+    .mario-position(3,1);
+}
+
+.mario-shell-short-stride-left {
+    .mario-position(4,1);
+}
+
+.mario-shell-long-stride-left {
+    .mario-position(5,1);
+}
+@keyframes "mario-left-shell-running" {
+    from {
+        .mario-position(3, 1);
+    }
+    to {
+        .mario-position(6,1);
+    }
+}
+
+@-moz-keyframes mario-left-shell-running {
+    from {
+        .mario-position(3, 1);
+    }
+    to {
+        .mario-position(6,1);
+    }
+}
+
+@-webkit-keyframes "mario-left-shell-running" {
+    from {
+        .mario-position(3, 1);
+    }
+    to {
+        .mario-position(6,1);
+    }
+}
+
+@-ms-keyframes "mario-left-shell-running" {
+    from {
+        .mario-position(3, 1);
+    }
+    to {
+        .mario-position(6,1);
+    }
+}
+
+@-o-keyframes "mario-left-shell-running" {
+    from {
+        .mario-position(3, 1);
+    }
+    to {
+        .mario-position(6,1);
+    }
+}
+
+.mario-left-shell-running {
+    .sprite;
+    -webkit-animation: mario-left-shell-running .1s steps(3, end) infinite alternate;
+    -moz-animation: mario-left-shell-running .1s steps(3, end) infinite alternate;
+    -ms-animation: mario-left-shell-running .1s steps(3, end) infinite alternate;
+    -o-animation: mario-left-shell-running .1s steps(3, end) infinite alternate;
+    animation: mario-left-shell-running .1s steps(3, end) infinite alternate;
+}
+
+.mario-right-shell-running {
+    .mario-left-shell-running;
+    .horizontal-flip;
+}
+
+@keyframes "mario-climbing" {
+    from {
+        .mario-position(8, 0);
+    }
+    to {
+        .mario-position(10, 0);
+    }
+}
+
+@-moz-keyframes mario-climbing {
+     from {
+        .mario-position(8, 0);
+    }
+    to {
+        .mario-position(10, 0);
+    }
+}
+
+@-webkit-keyframes "mario-climbing" {
+    from {
+        .mario-position(8, 0);
+    }
+    to {
+        .mario-position(10, 0);
+    }
+}
+
+@-ms-keyframes "mario-climbing" {
+    from {
+        .mario-position(8, 0);
+    }
+    to {
+        .mario-position(10, 0);
+    }
+}
+
+@-o-keyframes "mario-climbing" {
+    from {
+        .mario-position(8, 0);
+    }
+    to {
+        .mario-position(10, 0);
+    }
+}
+
+.mario-climbing {
+    .sprite;
+    -webkit-animation: mario-climbing .8s steps(2, end) infinite;
+    -moz-animation: mario-climbing .8s steps(2, end) infinite;
+    -ms-animation: mario-climbing .8s steps(2, end) infinite;
+    -o-animation: mario-climbing .8s steps(2, end) infinite;
+    animation: mario-climbing .8s steps(2, end) infinite;
+}
+
+.mario-climbing-right {
+    .mario-climbing;
+    .horizontal-flip;
+}
+
+@keyframes "mario-wand" {
+    from {
+        .mario-position(10, 0);
+    }
+    to {
+        .mario-position(13, 0);
+    }
+}
+
+@-moz-keyframes mario-wand {
+    from {
+        .mario-position(10, 0);
+    }
+    to {
+        .mario-position(13, 0);
+    }
+}
+
+@-webkit-keyframes "mario-wand" {
+    from {
+        .mario-position(10, 0);
+    }
+    to {
+        .mario-position(13, 0);
+    }
+}
+
+@-ms-keyframes "mario-wand" {
+    from {
+        .mario-position(10, 0);
+    }
+    to {
+        .mario-position(13, 0);
+    }
+}
+
+@-o-keyframes "mario-wand" {
+    from {
+        .mario-position(10, 0);
+    }
+    to {
+        .mario-position(13, 0);
+    }
+}
+
+.mario-wand {
+    .sprite;
+    -webkit-animation: mario-wand .1s steps(3, end) infinite;
+    -moz-animation: mario-wand .1s steps(3, end) infinite;
+    -ms-animation: mario-wand .1s steps(3, end) infinite;
+    -o-animation: mario-wand .1s steps(3, end) infinite;
+    animation: mario-wand .1s steps(3, end) infinite;
+}
+
+.mario-wand-right {
+    .mario-wand;
+    .horizontal-flip;
+}
+
+@keyframes "mario-boot" {
+    from {
+        .mario-position(13, 0);
+    }
+    to {
+        .mario-position(15, 0);
+    }
+}
+
+@-moz-keyframes mario-boot {
+    from {
+        .mario-position(13, 0);
+    }
+    to {
+        .mario-position(15, 0);
+    }
+}
+
+@-webkit-keyframes "mario-boot" {
+    from {
+        .mario-position(13, 0);
+    }
+    to {
+        .mario-position(15, 0);
+    }
+}
+
+@-ms-keyframes "mario-boot" {
+     from {
+        .mario-position(13, 0);
+    }
+    to {
+        .mario-position(15, 0);
+    }
+}
+
+@-o-keyframes "mario-boot" {
+     from {
+        .mario-position(13, 0);
+    }
+    to {
+        .mario-position(15, 0);
+    }
+}
+
+.mario-boot {
+    .sprite;
+    -webkit-animation: mario-boot 1s steps(2, end) infinite;
+    -moz-animation: mario-boot 1s steps(2, end) infinite;
+    -ms-animation: mario-boot 1s steps(2, end) infinite;
+    -o-animation: mario-boot 1s steps(2, end) infinite;
+    animation: mario-boot 1s steps(2, end) infinite;
+}
+
+.mario-boot-right {
+    .mario-boot;
+    .horizontal-flip;
+}
+
+@keyframes "mario-swim-left" {
+    from {
+        .mario-position(6, 1);
+    }
+    to {
+        .mario-position(9, 1);
+    }
+}
+
+@-moz-keyframes mario-swim-left {
+    from {
+        .mario-position(6, 1);
+    }
+    to {
+        .mario-position(9, 1);
+    }
+}
+
+@-webkit-keyframes "mario-swim-left" {
+    from {
+        .mario-position(6, 1);
+    }
+    to {
+        .mario-position(9, 1);
+    }
+}
+
+@-ms-keyframes "mario-swim-left" {
+    from {
+        .mario-position(6, 1);
+    }
+    to {
+        .mario-position(9, 1);
+    }
+}
+
+@-o-keyframes "mario-swim-left" {
+    from {
+        .mario-position(6, 1);
+    }
+    to {
+        .mario-position(9, 1);
+    }
+}
+
+.mario-swim-left {
+    .sprite;
+    -webkit-animation: mario-swim-left .5s steps(3, end) infinite;
+    -moz-animation: mario-swim-left .5s steps(3, end) infinite;
+    -ms-animation: mario-swim-left .5s steps(3, end) infinite;
+    -o-animation: mario-swim-left .5s steps(3, end) infinite;
+    animation: mario-swim-left .5s steps(3, end) infinite;
+}
+
+.mario-swim-right {
+    .mario-swim-left;
+    .horizontal-flip;
+}

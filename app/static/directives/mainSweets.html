@@ -3,7 +3,7 @@
     <div class="wrapper">
         <div ng-repeat="message in MessageData.messages">
             <div class="article" data-from="{{ message.from }}" data-sid="{{ message.sid }}">
-                <blockquote><em>&#8220</em>{{ message.body }}<em>&#8220</em></blockquote> 
+                <blockquote><em>&#8220</em><span ng-bind-html-unsafe="message.body | Marioticons">{{ message.body }}</span><em>&#8220</em></blockquote> 
                 <abbr class="timeago" title="{{message.date_sent}}">{{message.date_sent | Sent}}</abbr>
             </div>
         </div>

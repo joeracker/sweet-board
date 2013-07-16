@@ -17,6 +17,11 @@ filter('MessageFilter', function () {
 
     return helper.filter;
 }).
+filter('Marioticons', function (MarioticonData) {
+    return function (msg_text) {
+        return MarioticonData.parseText(msg_text);
+    };
+}).
 filter('Sent', function() {
     return function(input) {
         return moment(input).fromNow();
