@@ -72,6 +72,30 @@ angular.module('SweetBoardServices', ['ngResource']).
                 "rage": {
                     type: "img",
                     src: "/static/img/hades_rage.gif"
+                },
+                "highfive": {
+                    type: "img",
+                    src: "/static/img/high_five.gif"
+                },
+                "graykitteh": {
+                    type: "img",
+                    src: "/static/img/graykitteh.gif"
+                },
+                "infinitefacepalm": {
+                    type: "img",
+                    src: "/static/img/infinite_face_palm.gif"
+                },
+                "zsnap": {
+                    type: "img",
+                    src: "/static/img/zsnap.gif"
+                },
+                "happylady": {
+                    type: "img",
+                    src: "/static/img/happy_lady.gif"
+                },
+                "excited": {
+                    type: "img",
+                    src: "/static/img/excited.gif"
                 }
             },
             textEnclosures: ["[","]"],
