@@ -11,19 +11,54 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="/static/styles/bootstrap.css">
-    <link rel="stylesheet" href="/static/styles/main.css">
-    <link rel="stylesheet" href="/static/styles/fonts.css">
-    <link rel="stylesheet" href="/static/styles/mario.css">
+    <link rel="stylesheet" href="../static/styles/bootstrap.css">
+    <link rel="stylesheet" href="../static/styles/main.css">
+    <link rel="stylesheet" href="../static/styles/fonts.css">
+    <link rel="stylesheet" href="../static/styles/mario.css">
+    <link rel="stylesheet/less" type="text/css" href="../static/styles/mario_sprites.less">
+      
+    <script type="text/javascript">
+        less = {
+            env: "development", // or "production"
+            async: false,       // load imports async
+            fileAsync: false,   // load imports async when in a page under
+                                // a file protocol
+            poll: 1000,         // when in watch mode, time in ms between polls
+            functions: {},      // user functions, keyed by name
+            dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+            relativeUrls: false// whether to adjust url's to be relative
+                                // if false, url's are already relative to the
+                                // entry less file
+            //rootpath: ":/a.com/"// a path to add on to the start of every url
+                                //resource
+        };
+    </script>
+    <script type="text/javascript" src="../static/scripts/vendor/less.js"></script>
+      
     <!-- endbuild -->
   </head>
   <body class="nobg">
-      <div class="sprite mario left walking"></div>
-      <div class="sprite mario right walking"></div>
-      <div class="sprite mario left sprinting"></div>
-      <div class="sprite mario right sprinting"></div>
-      <p></p>
-          <div class="sprite mario examining left"></div>
-          <div class="sprite mario examining right"></div>
+      <div class="mario-walking-left"></div>
+      <div class="mario-walking-right"></div>
+      <div class="mario-sprinting-left"></div>
+      <div class="mario-sprinting-right"></div>
+      <div class="mario-skid-left"></div>
+      <div class="mario-skid-right"></div>
+      <div class="mario-jump-left"></div>
+      <div class="mario-jump-right"></div>
+      <div class="mario-swim-left"></div>
+      <div class="mario-swim-right"></div>
+      <div class="mario-boot"></div>
+      <div class="mario-boot-right"></div>
+      <div class="mario-wand"></div>
+      <div class="mario-wand-right"></div>
+      <div class="mario-climbing"></div>
+      <div class="mario-left-shell-running"></div>
+      <div class="mario-right-shell-running"></div>
+      <div class="mario-kick-left"></div>
+      <div class="mario-kick-right"></div>
+      <div class="mario-duck-left"></div>
+      <div class="mario-duck-right"></div>
+      
   </body>
 </html>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('SweetBoard', ['SweetBoardDirectives', 'SweetBoardFilters', 'SweetBoardServices'])
+angular.module('SweetBoard', ['ngSanitize', 'SweetBoardDirectives', 'SweetBoardFilters', 'SweetBoardServices'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
