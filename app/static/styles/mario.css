@@ -50,3 +50,97 @@ h1, h3 {
 	background-position: 5px center;
 	padding-left: 80px !important;
 }
+
+.sprite {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+}
+
+.sprite.vintage-topper {
+    position: fixed;
+    bottom: 191px;
+    z-index: 10000;
+    right: 130px;
+}
+
+.mario {
+    background-image: url(../img/mario_sprites.png);
+    background-position-y: -220px;
+}
+
+@keyframes "mario-left-examining" {
+ from {
+    background-position-x: -360px;
+ }
+ to {
+    background-position-x: 0px;
+ }
+
+}
+
+@-moz-keyframes mario-left-examining {
+ from {
+   background-position-x: -360px;
+ }
+ to {
+   background-position-x: 0px;
+ }
+
+}
+
+@-webkit-keyframes "mario-left-examining" {
+ from {
+   background-position-x: -360px;
+ }
+ to {
+   background-position-x: 0px;
+ }
+
+}
+@keyframes "mario-right-examining" {
+ from {
+    background-position-x: -720px;
+ }
+ to {
+    background-position-x: -1080px;
+ }
+
+}
+
+@-moz-keyframes mario-right-examining {
+ from {
+   background-position-x: -720px;
+ }
+ to {
+   background-position-x: -1080px;
+ }
+
+}
+
+@-webkit-keyframes "mario-right-examining" {
+ from {
+   background-position-x: -720px;
+ }
+ to {
+   background-position-x: -1080px;
+ }
+
+}
+
+.mario.examining {
+    background-position-y: -580px;
+}
+
+.mario.left.examining {
+	-webkit-animation: mario-left-examining 2s steps(3, end) infinite alternate;
+	-moz-animation: mario-left-examining 2s steps(3, end) infinite alternate;
+	animation: mario-left-examining 2s steps(3, end) infinite alternate;
+}
+
+.mario.right.examining {
+	-webkit-animation: mario-right-examining 2s steps(3, end) infinite alternate;
+	-moz-animation: mario-right-examining 2s steps(3, end) infinite alternate;
+	animation: mario-right-examining 2s steps(3, end) infinite alternate;
+}
