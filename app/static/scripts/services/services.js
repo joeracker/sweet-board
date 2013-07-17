@@ -100,6 +100,10 @@ angular.module('SweetBoardServices', ['ngResource']).
                 "jonstewsurprise": {
                     type: "img",
                     src: "/static/img/jonstewsurprise.gif"
+                },
+                "cholo": {
+                    type: "img",
+                    src: "/static/img/cholo.gif"
                 }
             },
             textEnclosures: ["[","]"],
